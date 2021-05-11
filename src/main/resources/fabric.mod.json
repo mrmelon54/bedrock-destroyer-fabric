@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "bedrockdestroyer",
+  "version": "${version}",
+  "name": "Bedrock Destroyer",
+  "description": "Removes bedrock from players",
+  "authors": [
+    "MrMelon54"
+  ],
+  "contact": {
+    "homepage": "https://minecraft.onpointcoding.net/mods/bedrockdestroyer",
+    "sources": "https://github.com/MrMelon54/bedrock-destroyer-fabric-1.16"
+  },
+  "license": "MIT",
+  "icon": "assets/bedrockdestroyer/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.onpointcoding.bedrockdestroyer.BedrockDestroyer"
+    ]
+  },
+  "mixins": [
+    "BedrockDestroyer.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.10.8",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  }
+}
