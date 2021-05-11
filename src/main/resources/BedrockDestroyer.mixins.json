@@ -4,7 +4,9 @@
   "package": "net.onpointcoding.bedrockdestroyer.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinChestBlock"
+    "MixinChestBlock",
+    "MixinEnderChestBlock",
+    "MixinShulkerBoxBlock"
   ],
   "client": [
   ],
