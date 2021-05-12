@@ -7,12 +7,12 @@ import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.onpointcoding.bedrockdestroyer.BedrockDestroyer;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -33,12 +33,14 @@ public abstract class MixinChestBlock {
 
     @Inject(method = "onUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;openHandledScreen(Lnet/minecraft/screen/NamedScreenHandlerFactory;)Ljava/util/OptionalInt;", ordinal = 0))
     private void wrapOnUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
+        if (BedrockDestroyer.getInstance().shouldIgnorePlayer(player)) return;
+
         Inventory inventory = getInventory(this, state, world, pos);
         int size = inventory.size();
         for (int i = 0; i < size; i++) {
             ItemStack stack = inventory.getStack(i);
-            if (stack.getItem() == Items.BEDROCK) {
-                inventory.setStack(i, new ItemStack(Items.AIR));
+            if (BedrockDestroyer.getInstance().shouldDestroyItemStack(stack)) {
+                inventory.setStack(i, BedrockDestroyer.getInstance().createEmptyStack());
             }
         }
     }

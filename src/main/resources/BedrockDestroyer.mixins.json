@@ -4,9 +4,17 @@
   "package": "net.onpointcoding.bedrockdestroyer.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "MixinAbstractDonkeyEntity",
+    "MixinAbstractFurnaceBlock",
+    "MixinBarrelBlock",
     "MixinChestBlock",
+    "MixinChestMinecartEntity",
+    "MixinDispenserBlock",
     "MixinEnderChestBlock",
-    "MixinShulkerBoxBlock"
+    "MixinHopperBlock",
+    "MixinHopperMinecartEntity",
+    "MixinShulkerBoxBlock",
+    "MixinStorageMinecartEntity"
   ],
   "client": [
   ],
