@@ -9,7 +9,7 @@
   ],
   "contact": {
     "homepage": "https://minecraft.onpointcoding.net/mods/bedrockdestroyer",
-    "sources": "https://github.com/MrMelon54/bedrock-destroyer-fabric-1.16"
+    "sources": "https://github.com/MrMelon54/bedrock-destroyer-fabric"
   },
   "license": "MIT",
   "icon": "assets/bedrockdestroyer/icon.png",
