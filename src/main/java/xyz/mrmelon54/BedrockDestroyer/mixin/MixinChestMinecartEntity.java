@@ -1,7 +1,7 @@
-package net.onpointcoding.bedrockdestroyer.mixin;
+package xyz.mrmelon54.BedrockDestroyer.mixin;
 
 import net.minecraft.entity.vehicle.ChestMinecartEntity;
-import net.onpointcoding.bedrockdestroyer.IMinecartEntitySize;
+import xyz.mrmelon54.BedrockDestroyer.IMinecartEntitySize;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 

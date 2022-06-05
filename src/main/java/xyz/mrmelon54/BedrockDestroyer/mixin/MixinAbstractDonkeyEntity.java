@@ -1,4 +1,4 @@
-package net.onpointcoding.bedrockdestroyer.mixin;
+package xyz.mrmelon54.BedrockDestroyer.mixin;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.AbstractDonkeyEntity;
@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
-import net.onpointcoding.bedrockdestroyer.BedrockDestroyer;
+import xyz.mrmelon54.BedrockDestroyer.BedrockDestroyer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

@@ -1,12 +1,12 @@
-package net.onpointcoding.bedrockdestroyer.mixin;
+package xyz.mrmelon54.BedrockDestroyer.mixin;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.vehicle.StorageMinecartEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.onpointcoding.bedrockdestroyer.BedrockDestroyer;
-import net.onpointcoding.bedrockdestroyer.IMinecartEntitySize;
+import xyz.mrmelon54.BedrockDestroyer.BedrockDestroyer;
+import xyz.mrmelon54.BedrockDestroyer.IMinecartEntitySize;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

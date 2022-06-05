@@ -1,4 +1,4 @@
-package net.onpointcoding.bedrockdestroyer.mixin;
+package xyz.mrmelon54.BedrockDestroyer.mixin;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DispenserBlock;
@@ -11,7 +11,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.onpointcoding.bedrockdestroyer.BedrockDestroyer;
+import xyz.mrmelon54.BedrockDestroyer.BedrockDestroyer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -28,8 +28,7 @@ public abstract class MixinDispenserBlock {
         if (BedrockDestroyer.getInstance().shouldIgnorePlayer(player)) return;
 
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof DispenserBlockEntity) {
-            DispenserBlockEntity dispenserBlockEntity = (DispenserBlockEntity) blockEntity;
+        if (blockEntity instanceof DispenserBlockEntity dispenserBlockEntity) {
             int size = dispenserBlockEntity.size();
             for (int i = 0; i < size; i++) {
                 ItemStack stack = dispenserBlockEntity.getStack(i);

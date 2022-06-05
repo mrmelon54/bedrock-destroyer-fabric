@@ -1,9 +1,9 @@
-package net.onpointcoding.bedrockdestroyer.mixin;
+package xyz.mrmelon54.BedrockDestroyer.mixin;
 
-import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BarrelBlockEntity;
+import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -11,26 +11,25 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.onpointcoding.bedrockdestroyer.BedrockDestroyer;
+import xyz.mrmelon54.BedrockDestroyer.BedrockDestroyer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(BarrelBlock.class)
-public abstract class MixinBarrelBlock {
+@Mixin(ShulkerBoxBlock.class)
+public abstract class MixinShulkerBoxBlock {
     @Inject(method = "onUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;openHandledScreen(Lnet/minecraft/screen/NamedScreenHandlerFactory;)Ljava/util/OptionalInt;", ordinal = 0))
     private void wrapOnUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
         if (BedrockDestroyer.getInstance().shouldIgnorePlayer(player)) return;
 
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof BarrelBlockEntity) {
-            BarrelBlockEntity barrelBlockEntity = (BarrelBlockEntity) blockEntity;
-            int size = barrelBlockEntity.size();
+        if (blockEntity instanceof ShulkerBoxBlockEntity shulkerBoxBlockEntity) {
+            int size = shulkerBoxBlockEntity.size();
             for (int i = 0; i < size; i++) {
-                ItemStack stack = barrelBlockEntity.getStack(i);
+                ItemStack stack = shulkerBoxBlockEntity.getStack(i);
                 if (BedrockDestroyer.getInstance().shouldDestroyItemStack(stack)) {
-                    barrelBlockEntity.setStack(i, BedrockDestroyer.getInstance().createEmptyStack());
+                    shulkerBoxBlockEntity.setStack(i, BedrockDestroyer.getInstance().createEmptyStack());
                 }
             }
         }

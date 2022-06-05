@@ -1,4 +1,4 @@
-package net.onpointcoding.bedrockdestroyer.mixin;
+package xyz.mrmelon54.BedrockDestroyer.mixin;
 
 import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;
@@ -11,7 +11,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.onpointcoding.bedrockdestroyer.BedrockDestroyer;
+import xyz.mrmelon54.BedrockDestroyer.BedrockDestroyer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -24,8 +24,7 @@ public abstract class MixinAbstractFurnaceBlock {
         if (BedrockDestroyer.getInstance().shouldIgnorePlayer(player)) return;
 
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof AbstractFurnaceBlockEntity) {
-            AbstractFurnaceBlockEntity abstractFurnaceBlockEntity = (AbstractFurnaceBlockEntity) blockEntity;
+        if (blockEntity instanceof AbstractFurnaceBlockEntity abstractFurnaceBlockEntity) {
             int size = abstractFurnaceBlockEntity.size();
             for (int i = 0; i < size; i++) {
                 ItemStack stack = abstractFurnaceBlockEntity.getStack(i);

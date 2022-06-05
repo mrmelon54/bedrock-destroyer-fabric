@@ -1,4 +1,4 @@
-package net.onpointcoding.bedrockdestroyer;
+package xyz.mrmelon54.BedrockDestroyer;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
