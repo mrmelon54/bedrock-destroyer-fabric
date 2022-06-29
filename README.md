@@ -19,3 +19,4 @@ It also prevents players from placing bedrock and destroys the whole stack when 
 ## Download
 
 - [CurseForge](https://www.curseforge.com/minecraft/mc-mods/bedrock-destroyer)
+- [Modrinth](https://modrinth.com/mod/bedrock-destroyer)
